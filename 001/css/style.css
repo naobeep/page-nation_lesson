@@ -1,0 +1,102 @@
+:root {
+  --gap: 20px;
+  --itemWidth: calc((100% - var(--gap)) / 2) ;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 1000px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+}
+.container h1 {
+  margin: 0;
+  padding: 0;
+}
+.container #grid-items {
+  width: 100%;
+  min-height: 1000px;
+  margin-bottom: 60px;
+  display: grid;
+  grid-template: "item1 ... item2" "... ... ..." var(--gap) "item3 ... item4"/var(--itemWidth) var(--gap) var(--itemWidth);
+}
+.container #grid-items li {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+}
+.container #grid-items li .title {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #fff;
+  text-shadow: 1px 1px #000, 1px -1px #000, -1px 1px #000, -1px -1px #000;
+  z-index: 100;
+}
+.container #grid-items li figure {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.container #grid-items li figure img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+}
+.container #grid-items li .description {
+  padding: 10px;
+}
+.container #grid-items li:hover {
+  opacity: 0.8;
+}
+.container #grid-items li:hover figure img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.container #grid-items .item01 {
+  grid-area: item1;
+}
+.container #grid-items .item02 {
+  grid-area: item2;
+}
+.container #grid-items .item03 {
+  grid-area: item3;
+}
+.container #grid-items .item04 {
+  grid-area: item4;
+}
+.container #page-nation {
+  width: 200px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container #page-nation span {
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+  display: inline-block;
+  text-align: center;
+}
+.container #page-nation span.arrow {
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

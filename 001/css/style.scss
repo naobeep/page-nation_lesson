@@ -1,0 +1,112 @@
+:root {
+  --gap: 20px;
+  --itemWidth: calc((100% - var(--gap)) / 2)
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 1000px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 20px;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+  }
+
+  #grid-items {
+    width: 100%;
+    min-height: 1000px;
+    margin-bottom: 60px;
+    display: grid;
+    grid-template:
+    "item1 ... item2"
+    "... ... ..." var(--gap)
+    "item3 ... item4" /
+    var(--itemWidth) var(--gap) var(--itemWidth)
+    ;
+
+    li {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      transition: .5s all ease;
+
+      .title {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: #fff;
+        text-shadow: 1px 1px #000, 1px -1px #000, -1px 1px #000, -1px -1px #000;
+        z-index: 100;
+      }
+
+      figure {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+
+        img {
+          object-fit: cover;
+          transition: .5s all ease;
+        }
+
+      }
+      .description {
+        padding: 10px;
+      }
+
+      &:hover {
+        opacity: .8;
+        figure {
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+
+    .item01 {
+      grid-area: item1;
+    }
+    .item02 {
+      grid-area: item2;
+    }
+    .item03 {
+      grid-area: item3;
+    }
+    .item04 {
+      grid-area: item4;
+    }
+  }
+
+  #page-nation{
+    width: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      width: 40px;
+      height: 40px;
+      font-size: 2rem;
+      display: inline-block;
+      text-align: center;
+
+      &.arrow {
+        cursor: pointer;
+      }
+    }
+
+  }
+}
